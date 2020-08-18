@@ -8,8 +8,7 @@ Welcome to TimePlotGui's documentation!
 
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
-
+   
    help
 
 

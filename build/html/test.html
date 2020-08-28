@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>test &#8212; TimePlotGui August 2020 documentation</title>
+    <title>Context Menu Functionality &#8212; TimePlotGui August 2020 documentation</title>
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -31,8 +31,276 @@
 
           <div class="body" role="main">
             
-  <div class="section" id="test">
-<h1>test<a class="headerlink" href="#test" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="context-menu-functionality">
+<h1>Context Menu Functionality<a class="headerlink" href="#context-menu-functionality" title="Permalink to this headline">¶</a></h1>
+<p>The context menu contains the main functionality of the GUI.</p>
+<div class="section" id="view-all">
+<h2>View All<a class="headerlink" href="#view-all" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><p>Adjusts view in gui so that all the data is visible</p></li>
+<li><p>This same function has a short cut:</p>
+<ul>
+<li><p>Click the A inside a box that appears in the bottom left corner of the gui</p></li>
+</ul>
+</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="x-axis">
+<h2>X Axis<a class="headerlink" href="#x-axis" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><p>You can either be in “Manual” or “Auto” mode which is specified by the selected “radio button” next to the labels.</p></li>
+<li><p>When in manual mode, the plot will show the data in the bounds specified in the entry boxes, which can be changed by the user</p></li>
+<li><p>When in auto mode, the bounds of the data will change as data is added</p>
+<ul>
+<li><p>If the “auto pan only” checkbox is NOT selected, the bounds will expand to show all of the generated data</p></li>
+<li><p>If the “auto pan only” checkbox IS selected, the width of the plot window will stay fixed but the plot will show the most recent data can continue to show the most recent data as new data is acquired</p></li>
+<li><p>The “auto visible only” checkbox will not dramatically change the behavior of the plot. This feature is more impactful along the y axis</p></li>
+</ul>
+</li>
+<li><p>The “invert axis” checkbox inverts the axis such that large x axis values appear on the left instead of the right</p></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="y-axis">
+<h2>Y Axis<a class="headerlink" href="#y-axis" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><p>The y axis menu behaves largely the same as the x axis menu</p></li>
+</ul>
+</div></blockquote>
+<dl class="simple">
+<dt>Key differences:</dt><dd><ul class="simple">
+<li><p>In the “auto” mode, the autopan feature is not supported on the y axis. Checking or unchecking the “auto pan only” checkbox will trigger an information popup indicating this and will not change the functionality of the plot</p></li>
+<li><p>In the “auto” mode, the “auto visible only” feature will make the y axis stretch and shrink to only show the window on the y axis for which there is data</p>
+<ul>
+<li><p>This behavior is particularly relevant if, for example, a periodic function is being plotted while auto panning along the x axis and the width of the autopan window is less than the period of the function</p></li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="mouse-mode">
+<h2>Mouse Mode<a class="headerlink" href="#mouse-mode" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><p>This provides easy customization of the view bounds of the plot</p></li>
+<li><p>There are two options:</p>
+<ul>
+<li><p>Click and Drag:</p>
+<ul>
+<li><p>When you click on the plot and drag the mouse, the location on the plot that was clicked will follow your mouse to change the visible bounds</p></li>
+</ul>
+</li>
+<li><p>Rectangle Select:</p>
+<ul>
+<li><p>When you click and hold your mouse, you can drag the cursor to select a rectangle</p></li>
+<li><p>When the mouse is release the bounds of the visible plot will show the</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Regardless which mode you are in, scrolling with your mouse on the plot will zoom in or out</p></li>
+<li><p>Using either of these methods automatically changes your mode to “manual” in the X and Y Axis menus. To return to “auto” mode, either manually click the “auto” radio button in the corresponding menu OR click the small boxed capital A in the bottom left corner of the GUI</p></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="plot-options">
+<h2>Plot Options<a class="headerlink" href="#plot-options" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><p>The plot options submenu contains functionality to customize the appearance of the plot (e.g. line color, background gridlines, and log or fourier mode) as well as the treatment of the data and settings (e.g. autosaving data, restoring previous settings, and loading previously saved datasets).</p></li>
+<li><p>This is where the vast majority of the functionality is built in. All of the below suboptions are contained in the Plot Options submenu.</p></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="transforms">
+<h2>Transforms<a class="headerlink" href="#transforms" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><p>By checking Power Spectrum (FFT), the plot will show a fourier transform of the data</p>
+<ul>
+<li><p>If the “local fourier mode” checkbox is selected, this fourier transform ONLY applies to the subset of the data whose x values falls within the x bounds currently shown in the GUI</p></li>
+<li><p>If  “local fourier mode” checkbox is NOT selected, the plot will show a fourier transform of ALL of the data that has been collected to that point</p></li>
+<li><p>You cannot turn on the “local fourier mode” while already plotting a fourier transform</p>
+<ul>
+<li><p>This prevents taking a transform of a transform</p></li>
+<li><p>A popup box indicating the issue will appear</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>By checking the Log X or Log Y checkboxes, the plot will shift the corresponding axis into Log scale</p>
+<ul>
+<li><p>If there are values that are not able to be taken into log mode (e.g. negative values), the plot may disappear when you try to apply log mode</p>
+<ul>
+<li><p>If the plot disappears, simply unchecking the log box that caused it to disappear will bring the plot back</p></li>
+<li><p>While the plot is not visible, data is still being collected as normal</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>You can check multiple of the transform boxes to apply their effects at the same time</p></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="grid">
+<h2>Grid<a class="headerlink" href="#grid" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><p>By checking the x grid or y grid, background reference gridlines appear to indicate values only the chosen axis.</p></li>
+<li><p>The opacity slider determines how dark or faint the gridlines appear</p></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="line-settings">
+<h2>Line Settings<a class="headerlink" href="#line-settings" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><p>For each line being plotted, the line settings menu allows you to independently control the color, width, and alpha (how dark or faint the line is) or each line</p></li>
+<li><p>The number of lines listed in the line settings menu is determined by what is currently being plotted, so it may change if you, for example, load past data</p></li>
+<li><p>Alpha:</p>
+<ul>
+<li><p>Changing the slider will change how dark or light the corresponding line is</p></li>
+</ul>
+</li>
+<li><p>Width:</p>
+<ul>
+<li><p>The spinbox allow you to manually enter a value or tick the value up/down with the arrows</p></li>
+<li><p>Width values must be integers from 1 to 15 inclusive</p></li>
+</ul>
+</li>
+<li><p>Color</p>
+<ul>
+<li><p>Selecting the “change line color” button opens a color dialog box</p></li>
+<li><p>Simply select the color you want and click ok</p></li>
+<li><p>Plotting continues as you select and as you click on colors, you can see what they make the plot look like</p></li>
+<li><p>Colors are not fully applied until you press “ok”</p></li>
+<li><p>If you press cancel or just close the dialog, the color of the line will continue to be the color it was before you opened the dialog</p></li>
+</ul>
+</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="visualization-settings">
+<h2>Visualization Settings<a class="headerlink" href="#visualization-settings" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><p>Restore Default Plot Settings</p>
+<ul>
+<li><p>The library has default settings defined in plot_item_settings.py</p>
+<ul>
+<li><p>You can hard change the defaults in that python file</p></li>
+</ul>
+</li>
+<li><p>If you wish to return to these settings, simply press this button</p></li>
+</ul>
+</li>
+<li><p>Restore Saved Plot Settings</p>
+<ul>
+<li><p>This takes the values of the parameters in the custom_setting.JSON file and loads them into the GUI, replacing  the settings that were present at the time</p></li>
+<li><p>Together with “save current plot settings” this allows you to save your settings, change them, and then revert back to the saved settings if you want to discard your recent changes</p></li>
+</ul>
+</li>
+<li><p>Save Current Plot Settings</p>
+<ul>
+<li><p>This manually forces all of the current values of the tracked parameters to be stored to the “custom_settings.json” file</p></li>
+<li><p>This operation is done automatically when you close the GUI, but at any other time, you must do it manually if you wish to save it</p></li>
+<li><p>Together with “Restore saved plot settings” this allows you to save your settings, change them, and then revert back to the saved settings if you want to discard your recent changes</p></li>
+</ul>
+</li>
+<li><p>Clear Line Settings</p>
+<ul>
+<li><p>This button functions similarly to “restore saved plot settings” except it only applies to the qualities found in the line settings menu: alpha, width, and color</p></li>
+<li><p>Since line settings are purely aesthetic, this allows reversion of the visual qualities of the lines without changing properties that are potentially more critical</p></li>
+</ul>
+</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="data-options">
+<h2>Data Options<a class="headerlink" href="#data-options" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul>
+<li><p>Clear Data:</p>
+<ul class="simple">
+<li><p>The clear data button removes all of the data from the plot</p></li>
+<li><p>This does not delete the data from the store_data.json file, but if you were to save anything, the cleared data would be lost permanently</p></li>
+<li><p>This feature is most valuable when “clear old data on start” is NOT checked</p>
+<ul>
+<li><p>In this case, if you want to discard the data that is loaded automatically when the GUI opens before you start collecting data, you must do so manually with the “clear data” button</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Clear Old Data on Start</p>
+<ul class="simple">
+<li><p>When the GUI is opened, the data that was present</p></li>
+<li><p>When the “clear old data on start” is checked, the old loaded data is discarded automatically when you start collecting data</p></li>
+<li><p>If the checkbox is NOT check, the plotting will behave as a continuation of this old data</p>
+<ul>
+<li><p>Note that this generally results in a long horizontal line through the gap time period to connect the last data point before the GUI was closed and the first datapoint after it was reopened</p></li>
+</ul>
+</li>
+<li><p>Having this checkbox checked is recommended because the gap in the data from when the GUI was not running is not meaningful</p></li>
+</ul>
+</li>
+<li><p>Automatically save data
+* If the checkbox is NOT checked, data will only be saved when the plot is closed
+* If the checkbox IS checked, data will be saved automatically periodically</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>The frequency of the autosaving is determined by the integer entry box</p></li>
+<li><p>After N new data points are collect, where N is the number in the entry box, the data is saved</p>
+<ul>
+<li><p>The entry box can be any integer from 10 to 1000</p></li>
+<li><p>WARNING: Frequency autosaving when gathering data over long periods of time may affect performance</p></li>
+</ul>
+</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="change-labels">
+<h2>Change Labels<a class="headerlink" href="#change-labels" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><p>The “change plot title”, “change x axis label”, and “change y axis label” each trigger a popup box that allows you to enter text to replace the corresponding label</p>
+<ul>
+<li><p>If you press cancel or simply close the popup without clicking “OK”, the title will stay the same as before the popup appeared</p></li>
+</ul>
+</li>
+<li><p>Relative time markers:</p>
+<ul>
+<li><p>When checked, the plot will interpret the time that you press play as zero. All times will be given in reference to that zero point</p></li>
+<li><p>When NOT checked, the plot will indicate the time on a 24 hour clock</p></li>
+</ul>
+</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="load-stored-data">
+<h2>Load Stored Data<a class="headerlink" href="#load-stored-data" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><p>This button allows you to load data stored in json files (and formatted appropriately) into the GUI</p></li>
+<li><p>When clicked, a finder window popup up will appear for you to pick the JSON file with the data you want to load</p></li>
+<li><p>To abort simply press cancel</p></li>
+<li><p>After selecting a JSON data file, another finder window popup will appear for you to pick a JSON file with custom settings you want to load</p>
+<ul>
+<li><p>Picking custom settings is optional</p></li>
+<li><p>To load the data without custom settings simply press cancel</p></li>
+</ul>
+</li>
+<li><p>The data will appear in the GUI (with the custom settings is you selected a settings file)</p></li>
+</ul>
+</div></blockquote>
+</div>
 </div>
 
 
@@ -54,7 +322,21 @@
 <h3>Navigation</h3>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="help.html">Introduction</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">test</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Context Menu Functionality</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#view-all">View All</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#x-axis">X Axis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#y-axis">Y Axis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#mouse-mode">Mouse Mode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#plot-options">Plot Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#transforms">Transforms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#grid">Grid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#line-settings">Line Settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#visualization-settings">Visualization Settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#data-options">Data Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#change-labels">Change Labels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#load-stored-data">Load Stored Data</a></li>
+</ul>
+</li>
 </ul>
 
 <div class="relations">

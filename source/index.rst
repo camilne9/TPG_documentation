@@ -7,7 +7,7 @@ Welcome to TimePlotGui's documentation!
 =============================================
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
 
    help
    test

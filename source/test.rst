@@ -50,7 +50,7 @@ Plot Options
      * This is where the vast majority of the functionality is built in. All of the below suboptions are contained in the Plot Options submenu.
 
 Transforms
-----------
+~~~~~~~~~~
      * By checking Power Spectrum (FFT), the plot will show a fourier transform of the data
 
        * If the “local fourier mode” checkbox is selected, this fourier transform ONLY applies to the subset of the data whose x values falls within the x bounds currently shown in the GUI
@@ -68,12 +68,12 @@ Transforms
      * You can check multiple of the transform boxes to apply their effects at the same time
 
 Grid
-----
+~~~~
      * By checking the x grid or y grid, background reference gridlines appear to indicate values only the chosen axis.
      * The opacity slider determines how dark or faint the gridlines appear
 
 Line Settings
--------------
+~~~~~~~~~~~~~
      * For each line being plotted, the line settings menu allows you to independently control the color, width, and alpha (how dark or faint the line is) or each line
      * The number of lines listed in the line settings menu is determined by what is currently being plotted, so it may change if you, for example, load past data
      * Alpha:
@@ -92,7 +92,7 @@ Line Settings
        * If you press cancel or just close the dialog, the color of the line will continue to be the color it was before you opened the dialog
 
 Visualization Settings
-----------------------
+~~~~~~~~~~~~~~~~~~~~~~
        * Restore Default Plot Settings
 
          * The library has default settings defined in plot_item_settings.py
@@ -114,7 +114,7 @@ Visualization Settings
          * Since line settings are purely aesthetic, this allows reversion of the visual qualities of the lines without changing properties that are potentially more critical
 
 Data Options
-------------
+~~~~~~~~~~~~
          * Clear Data:
 
            * The clear data button removes all of the data from the plot
@@ -141,7 +141,7 @@ Data Options
                * WARNING: Frequency autosaving when gathering data over long periods of time may affect performance
 
 Change Labels
--------------
+~~~~~~~~~~~~~
          * The “change plot title”, “change x axis label”, and “change y axis label” each trigger a popup box that allows you to enter text to replace the corresponding label
 
            * If you press cancel or simply close the popup without clicking “OK”, the title will stay the same as before the popup appeared
@@ -151,12 +151,12 @@ Change Labels
            * When NOT checked, the plot will indicate the time on a 24 hour clock
 
 Load Stored Data
-----------------
+~~~~~~~~~~~~~~~~
          * This button allows you to load data stored in json files (and formatted appropriately) into the GUI
          * When clicked, a finder window popup up will appear for you to pick the JSON file with the data you want to load
          * To abort simply press cancel
          * After selecting a JSON data file, another finder window popup will appear for you to pick a JSON file with custom settings you want to load
-         
+
            * Picking custom settings is optional
            * To load the data without custom settings simply press cancel
          * The data will appear in the GUI (with the custom settings is you selected a settings file)

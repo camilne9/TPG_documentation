@@ -10,6 +10,7 @@ Welcome to TimePlotGui's documentation!
    :maxdepth: 3
 
    help
+   installation
    test
 
 

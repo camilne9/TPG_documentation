@@ -6,7 +6,7 @@ Regardless which installation method is used, it is necessary to install the app
 Python Package Index
 --------------------
 The library can be install from `PyPI <https://pypi.org/project/TimePlotGui/>`_ from the command line with the command
-*pip install TimePlotGui*
+*pip install TimePlotGui*.
 
 Github
 ------

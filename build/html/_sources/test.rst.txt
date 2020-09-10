@@ -78,6 +78,12 @@ Grid
 
 Line Settings
 ~~~~~~~~~~~~~
+
+.. figure:: line_settings_menu.png
+    :width: 800px
+    :align: center
+    
+
      * For each line being plotted, the line settings menu allows you to independently control the color, width, and alpha (how dark or faint the line is) or each line
      * The number of lines listed in the line settings menu is determined by what is currently being plotted, so it may change if you, for example, load past data
      * Alpha:

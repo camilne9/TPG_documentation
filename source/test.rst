@@ -2,6 +2,10 @@ Context Menu Functionality
 ==========================
 The context menu contains the main functionality of the GUI.
 
+.. figure:: context_menu.png
+    :width: 800px
+    :align: center
+
 View All
 --------
    * Adjusts view in gui so that all the data is visible

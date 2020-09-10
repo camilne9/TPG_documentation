@@ -11,7 +11,7 @@ The library can be install from `PyPI <https://pypi.org/project/TimePlotGui/>`_ 
 Github
 ------
 The code and its version history can be found on (and installed using) the
-git repository `git repository <https://github.com/kehaus/time-plot-gui>`_.
+`git repository <https://github.com/kehaus/time-plot-gui>`_.
 When installing from git, it is possible to leverage git or to install it using a zip file.
 
 
@@ -23,5 +23,3 @@ In order to properly use the TimePlotGui library it is necessary to also install
       * `PyQt5 <https://pypi.org/project/PyQt5/>`_
       * `pyqtgraph <https://pypi.org/project/pyqtgraph/>`_
       * `numpy <https://pypi.org/project/numpy/>`_
-      * time
-      * datetime
